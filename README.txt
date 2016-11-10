@@ -1,3 +1,5 @@
-A Pen created at CodePen.io. You can find this one at http://codepen.io/Dan/pen/863ea2e3d3437d2e1d9900f9f1a82183.
+Create a web application in IIS, point it at this folder, run index.html. See the jquery code at the bottom to see how to add a new html
+
+Each section is its own html file
 
  
