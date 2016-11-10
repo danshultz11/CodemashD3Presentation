@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Big Data with D3.js</title>
+  
+  
+  <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.2.0/css/reveal.min.css'>
+<link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.2.0/lib/css/zenburn.min.css'>
+<link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.2.0/css/theme/white.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  
+<div class="reveal">
+  <div class="slides">
+    <section>
+      <section data-background="#331133">
+        <H1>Bring your Big Data to life</H1>
+        <P>	using JavaScript and a browser using D3.js</P>
+        <aside class="notes">These are presenter notes.</aside>
+        <pre> <code data-trim="data-trim" class="hljs"> 
+function linkify( selector ) {             
+ if (supports3DTransforms) {
+  var noda=aaa;
+ }
+}</code></pre>
+      </section>
+      <section>
+        <H1>Dan Shultz</H1><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/dan.png" style="border:none"/>
+        <aside>These are presenter notes</aside>
+      </section>
+      <section><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/Hopkins.png" style="border:none"/></section>
+      <section><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/CompuServe.png" style="border:none"/></section>
+      <section>
+        <H1>Doug Mair</H1>
+        <image src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/DougMair-300x300.png"></image>
+        <p>Email: doug.mair@gmail.com</p>
+        <p>Twitter: doug_mair</p>
+      </section>
+    </section>
+    <section id="datascience">
+    </section>
+
+    <section id="bigdata">
+    </section>
+
+    <section id="htmlsvg">
+
+    </section>
+    <section id="d3intro">
+
+    </section id="d3selectors">
+
+    <section id="renderlets">
+    
+    </section>
+    <section id="crossfilter">
+    </section>
+    <section id="debugging">
+
+    </section>
+    <section id="transitions">
+    </section>
+    <section id="unittesting">
+    </section>
+    <section id="dcjs">
+    </section>
+    <section id="otheruses">
+    </section>
+    <section id="maindemo">
+    </section>
+  </div>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.2.0/js/reveal.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.2.0/plugin/notes/notes.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.2.0/lib/js/head.min.js'></script>
+
+    <script src="js/index.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+<script>
+$(document).ready(
+function(){
+ getSection('htmlsvg');
+ getSection('bigdata');
+ getSection('datascience'); 
+ getSection('d3intro');
+ getSection('d3selectors');
+ getSection('renderlets');
+ getSection('crossfilter'); 
+ getSection('debugging');
+ getSection('transitions');  
+ getSection('unittesting');
+ getSection('dcjs');
+ getSection('otheruses');
+ getSection('maindemo');
+}
+)
+var getSection = function(sectionName){
+$.ajax
+({
+    url: sectionName + ".html",
+    type: "GET",
+    cache: false,
+    data: {},
+    success: function (data) {
+        $('#' + sectionName).html(data);
+    },
+    error: function (e) {
+        alert("failed to retrieve section " + sectionName + e.responseText);
+    }
+});
+}
+</script>
+</body>
+</html>
