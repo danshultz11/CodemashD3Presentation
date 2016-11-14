@@ -11,7 +11,7 @@ Reveal.initialize({
         },
         dependencies: [
             {
-                src: '//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.2.0/lib/js/classList.min.js',
+                src: 'lib/js/classList.min.js',
                 condition: function () {
                     return document.body.classList;
                 }
