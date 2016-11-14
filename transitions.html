@@ -2,3 +2,15 @@
       <H1>Transitions</H1>
       <H3>Animations</H3>
 </section>
+<section>
+    <p>Basic Transition</p>
+    <pre>var t = d3.transition()
+    .duration(750)
+    .ease(d3.easeLinear);
+d3.selectAll(".apple").transition(t)
+    .style("fill", "red");
+d3.selectAll(".orange").transition(t)
+    .style("fill", "orange");
+</pre>
+    <aside class="notes">This is a basic transition</aside>
+</section>
