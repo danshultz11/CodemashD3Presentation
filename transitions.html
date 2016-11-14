@@ -1,16 +1,77 @@
-<section>
+﻿<section>
       <H1>Transitions</H1>
       <H3>Animations</H3>
 </section>
 <section>
     <p>Basic Transition</p>
     <pre>var t = d3.transition()
-    .duration(750)
-    .ease(d3.easeLinear);
-d3.selectAll(".apple").transition(t)
-    .style("fill", "red");
-d3.selectAll(".orange").transition(t)
-    .style("fill", "orange");
-</pre>
+        .duration(750)
+        .ease(d3.easeLinear);
+    d3.selectAll(".apple").transition(t)
+        .style("fill", "red");
+    d3.selectAll(".orange").transition(t)
+        .style("fill", "orange");
+    </pre>
     <aside class="notes">This is a basic transition</aside>
+</section>
+<section>
+    <p>Go through Easings</p>
+
+    See https://github.com/d3/d3-ease ...use above code and swap in different easings
+
+    <aside class="notes">Easing is a method of distorting time to control apparent motion in animation. 
+    It is most commonly used for slow-in, slow-out. By easing time, animated transitions are smoother and exhibit more plausible motion.
+
+    The easing types in this module implement the ease method, which takes a normalized time t and returns the corresponding “eased” time tʹ. 
+    Both the normalized time and the eased time are typically in the range [0,1], where 0 represents the start of the animation and 1 represents the end; 
+    some easing types, such as elastic, may return eased times slightly outside this range. 
+    
+    A good easing type should return 0 if t = 0 and 1 if t = 1. See the easing explorer for a visual demonstration. 
+
+These easing types are largely based on work by Robert Penner.</aside>
+</section>
+<section>
+    <ul>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#_ease"><em>ease</em></a> - ease the given normalized time.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeLinear">d3.easeLinear</a> - linear easing; the identity function.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easePolyIn">d3.easePolyIn</a> - polynomial easing; raises time to the given power.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easePolyOut">d3.easePolyOut</a> - reverse polynomial easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easePolyInOut">d3.easePolyInOut</a> - symmetric polynomial easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#poly_exponent"><em>poly</em>.exponent</a> - specify the polynomial exponent.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeQuad">d3.easeQuad</a> - an alias for easeQuadInOut.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeQuadIn">d3.easeQuadIn</a> - quadratic easing; squares time.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeQuadOut">d3.easeQuadOut</a> - reverse quadratic easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeQuadInOut">d3.easeQuadInOut</a> - symmetric quadratic easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeCubic">d3.easeCubic</a> - an alias for easeCubicInOut.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeCubicIn">d3.easeCubicIn</a> - cubic easing; cubes time.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeCubicOut">d3.easeCubicOut</a> - reverse cubic easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeCubicInOut">d3.easeCubicInOut</a> - symmetric cubic easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeSin">d3.easeSin</a> - an alias for easeSinInOut.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeSinIn">d3.easeSinIn</a> - sinusoidal easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeSinOut">d3.easeSinOut</a> - reverse sinusoidal easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeSinInOut">d3.easeSinInOut</a> - symmetric sinusoidal easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeExp">d3.easeExp</a> - an alias for easeExpInOut.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeExpIn">d3.easeExpIn</a> - exponential easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeExpOut">d3.easeExpOut</a> - reverse exponential easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeExpInOut">d3.easeExpInOut</a> - symmetric exponential easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeCircle">d3.easeCircle</a> - an alias for easeCircleInOut.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeCircleIn">d3.easeCircleIn</a> - circular easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeCircleOut">d3.easeCircleOut</a> - reverse circular easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeCircleInOut">d3.easeCircleInOut</a> - symmetric circular easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeElastic">d3.easeElastic</a> - an alias for easeElasticOut.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeElasticIn">d3.easeElasticIn</a> - elastic easing, like a rubber band.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeElasticOut">d3.easeElasticOut</a> - reverse elastic easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeElasticInOut">d3.easeElasticInOut</a> - symmetric elastic easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#elastic_amplitude"><em>elastic</em>.amplitude</a> - specify the elastic amplitude.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#elastic_period"><em>elastic</em>.period</a> - specify the elastic period.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeBack">d3.easeBack</a> - an alias for easeBackInOut.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeBackIn">d3.easeBackIn</a> - anticipatory easing, like a dancer bending his knees before jumping.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeBackOut">d3.easeBackOut</a> - reverse anticipatory easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeBackInOut">d3.easeBackInOut</a> - symmetric anticipatory easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#back_overshoot"><em>back</em>.overshoot</a> - specify the amount of overshoot.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeBounce">d3.easeBounce</a> - an alias for easeBounceOut.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeBounceIn">d3.easeBounceIn</a> - bounce easing, like a rubber ball.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeBounceOut">d3.easeBounceOut</a> - reverse bounce easing.</li>
+        <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeBounceInOut">d3.easeBounceInOut</a> - symmetric bounce easing.</li>
+    </ul>
 </section>
