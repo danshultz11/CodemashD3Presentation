@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html >
 <head>
   <meta charset="UTF-8">
@@ -100,7 +100,8 @@ function(){
  getSection('maindemo');
 }
 )
-var getSection = function(sectionName){
+var getSection = function (sectionName) {
+    var base
 $.ajax
 ({
     url: sectionName + ".html",
