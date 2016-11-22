@@ -1,22 +1,29 @@
-      <section>
-        <h1>HTML/SVG</h1>
-      </section>
-      <section>
-        <h3>Sublevel</h3>
-	<p>
-	Viewbox aspect ratio
-	</p>
-	<p>
-	lines around shapes like div borders don't exist
-	</p>
-	<p>
-	All positioning is absolute
-	</p>
-	<p>
-	difference/overlap of properties vs CSS
-	</p>
-      </section>
-			<section>
-				<p>SVG Aspect Ratio example</p>
-				<a href="http://codepen.io/jonitrythall/pen/d0ceecfa63eca90cfa211034ddf209e6">CodePen</a>
-			</section>
+<section>
+    <h1>HTML/SVG</h1>
+</section>
+<section>
+    <h3>Sublevel</h3>
+    <p>
+        Viewbox aspect ratio
+    </p>
+    <p>
+        lines around shapes like div borders don't exist
+    </p>
+    <p>
+        All positioning is absolute
+    </p>
+    <p>
+        difference/overlap of properties vs CSS
+    </p>
+</section>
+<section>
+    <p>SVG Aspect Ratio example</p>
+    <a href="http://codepen.io/team/Dan/pen/xRqbZb" target="_blank">
+        SVG Codepen
+    </a>
+    <aside class="notes">
+        <p>Note: SVG Viewbox h & w preserves aspect ratio stopping at first dimension to be reduced(? verify?)</p>
+        <p>Viewbox is an attribute commonly used when creating SVG shapes. If you think of the document as a canvas, the view box is part of the canvas you want the viewer to see. Even though the page may cover the entire computer screen, the figure may only exist in a third of the whole.</p><p>Viewbox allows you to tell the parser to zoom in on that third. This eliminates the extra white space. Think of view box as a virtual approach to crop an image. Without it, your graphic will appear a third of its actual size.</p><h3>Viewbox Values</h3><p>To crop an image, you must create points on the picture to make the cuts. The same is true when using the viewbox attribute. The value settings for viewbox include:</p><ul><li><code>minx</code>—the beginning x coordinate</li><li><code>miny</code>—the beginning y coordinate</li><li><code>width</code>—width of the view box</li><li><code>height</code>—height of the view box</li></ul><p>The syntax for viewbox values is:</p><p>viewBox&#61;&#34;0 0 200 150&#34;</p><p>Do not confuse the width and height of the view box with the width and height you set for the SVG document.</p>
+
+    </aside>
+</section>

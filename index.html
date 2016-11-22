@@ -16,66 +16,167 @@
 
 <body>
   
-<div class="reveal">
-  <div class="slides">
-    <section>
-      <section data-background="#331133">
-        <H1>Bring your Big Data to life</H1>
-        <P>	using JavaScript and a browser using D3.js</P>
-        <aside class="notes">These are presenter notes.</aside>
-        <pre> <code data-trim="data-trim" class="hljs"> 
-function linkify( selector ) {             
- if (supports3DTransforms) {
-  var noda=aaa;
- }
-}</code></pre>
-      </section>
-      <section>
-        <H1>Dan Shultz</H1><img src="images/dan.png" style="border:none"/>
-        <aside>These are presenter notes</aside>
-      </section>
-      <section><img src="images/Hopkins.png" style="border:none"/></section>
-      <section><img src="images/CompuServe.png" style="border:none"/></section>
-      <section>
-        <H1>Doug Mair</H1>
-        <image src="https://images/DougMair-300x300.png"></image>
-        <p>Email: doug.mair@gmail.com</p>
-        <p>Twitter: doug_mair</p>
-      </section>
-    </section>
-    <section id="datascience">
-    </section>
-
-    <section id="bigdata">
-    </section>
-
-    <section id="htmlsvg">
-
-    </section>
-    <section id="d3intro">
-
-    </section id="d3selectors">
-
-    <section id="renderlets">
-    
-    </section>
-    <section id="crossfilter">
-    </section>
-    <section id="debugging">
-
-    </section>
-    <section id="transitions">
-    </section>
-    <section id="unittesting">
-    </section>
-    <section id="dcjs">
-    </section>
-    <section id="otheruses">
-    </section>
-    <section id="maindemo">
-    </section>
-  </div>
-</div>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <section data-background="#331133">
+                    <H2>Bring your Big Data to life</H2>
+                    <H3>	using JavaScript and a browser using D3.js</H3>
+                    <aside class="notes">These are presenter notes.</aside>
+                </section>
+                <section>
+                    <H1>Dan Shultz</H1><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/dan.png" style="border:none" />
+                    <aside>These are presenter notes</aside>
+                </section>
+                <section><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/Hopkins.png" style="border:none" /></section>
+                <section><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/CompuServe.png" style="border:none" /></section>
+                <section>
+                    <H1>Doug Mair</H1>
+                    <image src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/dougmair.jpg"></image>
+                    <p>Email: doug.mair@gmail.com</p>
+                    <p>Twitter: doug_mair</p>
+                </section>
+                <section>
+                    <image src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/OSUphoto_19210.jpg"></image>
+                </section>
+                <section>
+                    <image src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/prevjobs.jpg"></image>
+                </section>
+            </section>
+            <section id="01-datascience"></section>
+            <section>
+                <section>
+                    <H1>Big Data</H1>
+                    <H1>Map Reduce        </H1>
+                </section><a href="http://codepen.io/mgrover/pen/qZjJMa" target="_blank">
+                    Test link to another CodePen
+                    <p>(Doug)</p>
+                </a>
+                <section>
+                    <image src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/BigDataSources.jpg"></image>
+                </section>
+                <section>
+                    <H1>Big Data</H1>
+                    <ul>
+                        <li>With IOT and business processes, lots of data is being collected</li>
+                        <li>Separation of concerns</li>
+                        <ul>
+                            <li>Process the data on the Server as much as possible</li>
+                            <li>Client computers should do as little work as possible.</li>
+                        </ul>
+                        <li>Services and Event Queues are good Architectures to explore</li>
+                    </ul>
+                </section>
+                <section>
+                    <H1>Map Reduce</H1>
+                    <ul>
+                        <li>
+                            Map
+                            <ul>
+                                <li>Group, Sort and Filter.</li>
+                                <li>Take all of the stock trades and split them out by company, date or time</li>
+                                <li>Can be massively parallelized.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Reduce
+                            <ul>
+                                <li>Functions on each groups.</li>
+                                <li>Examples are Counts, Sums and Averages.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <image src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/MapReduce-StockDataset.jpg"></image>
+                </section>
+            </section>
+            <section id="03-htmlsvg"></section>
+            <section>
+                <section>
+                    <H1>D3 Intro</H1>
+                    <p>(Doug)</p>
+                </section>
+                <section data-background="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/D3MainPage.JPG"></section>
+                <section>
+                    <image src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/d3bumper.png"></image>
+                    <div class="left">
+                        <b style="font-size:150%">D3.js</b>
+                        <is>a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using &nbsp;</is><b>HTML, SVG, and CSS.</b>&nbsp; D3’s emphasis on web standards gives you the full capabilities of modern browsers without tying yourself to a proprietary framework, combining powerful visualization components and a data-driven approach to DOM manipulation.
+                    </div>
+                    <div>
+                        <p> </p>
+                    </div>
+                    <div>Wri,tten by Mike Bostock</div>
+                    <div>
+                        <p></p>
+                    </div>
+                    <h2>http://d3js.org/</h2>
+                </section>
+                <section data-background="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/Slide11.JPG">
+                    <H1>D3 Gallery</H1>
+                </section>
+                <section>
+                    <H1>D3 Startup Code</H1>
+                    <pre> <code data-trim="data-trim" class="hljs"> 
+HTML
+ Include css
+                    <head>
+                    <script type="text/javascript" src="d3.v2.min.js"></script>
+ </head></code></pre>
+                    <pre> <code data-trim="data-trim" class="hljs"> 
+Javascript
+ d3.selectAll("div")
+   .data([4, 8, 15, 16, 23, 42])
+     .style("width", function(d) { return d + "px"; });</code></pre>
+                </section>
+                <section>
+                    <H1>D3 Exercise</H1>
+                </section>
+                <section><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/Slide12.JPG" /></section>
+            </section>
+            <section id="05-d3selectors"></section>
+            <section>
+                <section>
+                    <H2>Renderlets </H2>
+                    <p>(Doug)</p>
+                </section>
+            </section>
+            <section id="07-lifecycle">
+                <section>
+                    <H2>
+                        Life Cycle
+                        <P>Overlap with Angular, D3, JQuery</P>
+                    </H2>
+                    <p>(Doug)</p>
+                </section>
+            </section>
+            <section>
+                <H1>Cross Filter </H1>
+                <H3>Brushing</H3>
+                <p>(Doug)</p>
+            </section>
+            <section id="09-debugging"></section>
+            <section id="10-transitions"></section>
+            <section>
+                <section>
+                    <H1>DC.js</H1>
+                    <H3>Fluent APIs</H3>
+                    <p>(Doug)</p>
+                </section>
+                <section><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/Slide16.JPG" /></section>
+            </section>
+            <section id="12-unittesting"></section>
+            <section id="13-otheruses"></section>
+            <section>
+                <H1>Main Demo</H1>
+                <H3>
+                    Meterorite Data
+                    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/notes.js"></script>
+                </H3>
+            </section>
+        </div>
+    </div>
   <script src='js/reveal.js'></script>
 <script src='plugin/notes/notes.js'></script>
 <script src='lib/js/head.min.js'></script>
@@ -83,39 +184,39 @@ function linkify( selector ) {
     <script src="js/index.js"></script>
     <script src="js/jquery-3.1.1.min.js"></script>
 <script>
-$(document).ready(
-function(){
- getSection('htmlsvg');
- getSection('bigdata');
- getSection('datascience'); 
- getSection('d3intro');
- getSection('d3selectors');
- getSection('renderlets');
- getSection('crossfilter'); 
- getSection('debugging');
- getSection('transitions');  
- getSection('unittesting');
- getSection('dcjs');
- getSection('otheruses');
- getSection('maindemo');
-}
-)
-var getSection = function (sectionName) {
-    var base
-$.ajax
-({
-    url: sectionName + ".html",
-    type: "GET",
-    cache: false,
-    data: {},
-    success: function (data) {
-        $('#' + sectionName).html(data);
-    },
-    error: function (e) {
-        alert("failed to retrieve section " + sectionName + e.responseText);
+    var assetUrl = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/858123/"
+    $(document).ready(function () {
+        getSection('03-htmlsvg');
+        getSection('02-bigdata');
+        getSection('01-datascience');
+        getSection('04-d3intro');
+        getSection('05-d3selectors');
+        getSection('06-renderlets');
+        getSection('07-lifecycle');
+        getSection('08-crossfilter');
+        getSection('09-debugging');
+        getSection('10-transitions');
+        getSection('12-unittesting');
+        getSection('11-dcjs');
+        getSection('13-otheruses');
+        getSection('14-maindemo');
     }
-});
-}
+  )
+    var getSection = function (sectionName) {
+        $.ajax
+        ({
+            url: assetUrl + sectionName + ".html",
+            type: "GET",
+            cache: false,
+            data: {},
+            success: function (data) {
+                $('#' + sectionName).html(data);
+            },
+            error: function (e) {
+                alert("failed to retrieve section " + sectionName + e.responseText);
+            }
+        });
+    }
 </script>
 </body>
 </html>
