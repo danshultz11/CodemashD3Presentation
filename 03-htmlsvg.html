@@ -1,29 +1,68 @@
-<section>
-    <h1>HTML/SVG</h1>
+      <section>
+        <h1>HTML/SVG</h1>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/meteoriteBlkBg.svg" />
+        <aside class="notes">
+          When you work with the D3 javascript charting framework, one of the unique aspects of it that may be unfamiliar to you as a web developer is the fact that you will be dealing with the SVG element and SVG objects as opposed to the usual HTML elements you're familiar with.   If you're not familiar with it, SVG stands for Scalable Vector Graphics - SVGs are scalable to the size of the viewing window and will adjust in size and resolution according to the window in which it is displayed.  So like, for devices with retina displays, they look great, and you don't need a hi-res and low-res version of your graphics.
+        </aside>
+      </section>
+<section>Common Elements 
+  <p>&lt;circle&gt;</p>
+  <p>&lt;rect&gt;</p>
+  <p>&lt;path&gt;</p>
+  <p>&lt;g&gt;</p>
 </section>
-<section>
-    <h3>Sublevel</h3>
-    <p>
-        Viewbox aspect ratio
-    </p>
-    <p>
-        lines around shapes like div borders don't exist
-    </p>
-    <p>
-        All positioning is absolute
-    </p>
-    <p>
-        difference/overlap of properties vs CSS
-    </p>
-</section>
-<section>
-    <p>SVG Aspect Ratio example</p>
-    <a href="http://codepen.io/team/Dan/pen/xRqbZb" target="_blank">
-        SVG Codepen
-    </a>
-    <aside class="notes">
-        <p>Note: SVG Viewbox h & w preserves aspect ratio stopping at first dimension to be reduced(? verify?)</p>
-        <p>Viewbox is an attribute commonly used when creating SVG shapes. If you think of the document as a canvas, the view box is part of the canvas you want the viewer to see. Even though the page may cover the entire computer screen, the figure may only exist in a third of the whole.</p><p>Viewbox allows you to tell the parser to zoom in on that third. This eliminates the extra white space. Think of view box as a virtual approach to crop an image. Without it, your graphic will appear a third of its actual size.</p><h3>Viewbox Values</h3><p>To crop an image, you must create points on the picture to make the cuts. The same is true when using the viewbox attribute. The value settings for viewbox include:</p><ul><li><code>minx</code>—the beginning x coordinate</li><li><code>miny</code>—the beginning y coordinate</li><li><code>width</code>—width of the view box</li><li><code>height</code>—height of the view box</li></ul><p>The syntax for viewbox values is:</p><p>viewBox&#61;&#34;0 0 200 150&#34;</p><p>Do not confuse the width and height of the view box with the width and height you set for the SVG document.</p>
 
-    </aside>
+			<section>
+        <h3>SVG vs HTML vs Canvas
+          <aside class="notes">
+        <ul>
+          <li>SVG is probably better for applications and apps with few items (less than 1000? Depends really)</li>
+          <li>Canvas is better for thousands of objects and careful manipulation, but a lot more code (or a library) is needed to get it off the ground.  If you've heard of the P5 javascript library, it's a really simplified wrapper for coding for the canvas. </li>
+          <li>HTML Divs are clunky and do not scale, making a circle is only possible with rounded corners, making complex shapes is possible but involves hundreds of tiny tiny pixel-wide divs. Madness ensues.</li>
+          </ul>
+          </aside>
 </section>
+      <section>
+	        Can apply styles/classes like html elements:<br />
+        <textarea rows="5" cols="50" style="font-size:18px;">
+   <svg ...>
+       <ellipse class="ground" .../>
+       <path class="ohio" .../>
+   </svg>
+          </textarea>
+      </section>
+              <section>
+	        Many differences in properties: fill vs background-color, stroke vs border:<br />
+        <textarea rows="9" cols="50" style="font-size:18px;">
+            .ohio {
+              fill: #94d31b; 
+              stroke="green" 
+              stroke-width="4"
+            }
+            .ohio:hover {
+              fill: #ace63c; 
+            }
+          </textarea>
+      </section>
+	    <section>
+	        Position SVG elements via x, y coordinates<br />
+                <textarea rows="4" cols="90" style="font-size:18px;">
+  <rect x="0" y="0" width="100" height="100" fill="#FFF000"/>
+  <circle cx="50" cy="50" r="30"  fill="#FFFF00"/>
+          </textarea>
+        <aside class="notes">Note that we position the rectangle and circle elements using x and y coordinates relative to their parent container, whether it's a &lt;g&gt; element or an &lt;svg&gt; element. <br /> Also note that svg elements, legitimate HTML elements, can be positioned using traditional CSS relative, absolute positioning.</aside>
+      </section>
+      <section>
+	        difference/overlap of properties vs CSS
+      </section>
+		<section>
+			<p>SVG Aspect Ratio example</p>
+			<a href="http://codepen.io/team/Dan/pen/xRqbZb" target="_blank">SVG Codepen
+            </a><br />
+      <a href="https://svg-edit.github.io/svgedit/releases/svg-edit-2.8.1/svg-editor.html#move_back">SVG Edit</a>
+      <aside class="notes">
+        <p>Note: SVG Viewbox h & w preserves aspect ratio stopping at first dimension to be reduced(? verify?)</p>
+				<p>Viewbox is an attribute commonly used when creating SVG shapes. If you think of the document as a canvas, the view box is part of the canvas you want the viewer to see. Even though the page may cover the entire computer screen, the figure may only exist in a third of the whole.</p><p>Viewbox allows you to tell the parser to zoom in on that third. This eliminates the extra white space. Think of view box as a virtual approach to crop an image. Without it, your graphic will appear a third of its actual size.</p><h3>Viewbox Values</h3><p>To crop an image, you must create points on the picture to make the cuts. The same is true when using the viewbox attribute. The value settings for viewbox include:</p><ul><li><code>minx</code>—the beginning x coordinate</li><li><code>miny</code>—the beginning y coordinate</li><li><code>width</code>—width of the view box</li><li><code>height</code>—height of the view box</li></ul><p>The syntax for viewbox values is:</p><p>viewBox&#61;&#34;0 0 200 150&#34;</p><p>Do not confuse the width and height of the view box with the width and height you set for the SVG document.</p>
+
+      </aside>
+		</section>
