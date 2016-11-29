@@ -10,17 +10,25 @@
   <p>&lt;rect&gt;<svg height="40" width="60"><rect x="20" y="0" height="40" width="40" fill="#5555dd" stroke="#ff00ff" stroke-width="2"></rect></svg></p>
   <p>&lt;path&gt; <svg height="40" width="60"> <path d="M 10 30 L 60 20 L 5 40 z" fill="orange" stroke="black" stroke-width="1"></path></svg></p>
   <p>&lt;text&gt;<svg height="40" width="80"> <text x="30" y="30" fill="yellow" stroke="red" stroke-width="1">xyz</text></svg></p>
-  <p><a href='http://codepen.io/team/Dan/pen/Ypxwwo?editors=1000#0'>Codepen SVG Elements</a></p>
+  <p><a href='http://codepen.io/team/Dan/pen/zoEPqr?editors=1000#' target='_blank'>Codepen SVG Elements</a></p>
   <aside class="notes">
   Three of the main svg elements you'll deal with when working with d3 are the circle, rect, path and text elements. So like, if you create a d3 bubble chart, under the covers, the bubbles will be SVG circles. Same with a bar chart... the bars themselves are svg rect elements.
   (popup):
+    Note: without specifying a size, the default height and width for SVGs is 300 x150 (2:1 ratio)
+    Mention/show cx cy r, fill stroke for circle<br />
+    x,y fill stroke for rect<br />
+    path coordinates for path <br />
+    text fill stroke    
   </aside>
 </section>
 <section>The &lt;g&gt; Element 
   <p>&lt;g&gt;</p>
-  <p><a href='http://codepen.io/team/Dan/pen/Ypxwwo?editors=1000#0'>Codepen SVG Elements</a></p>
-  <aside>
-  http://codepen.io/team/Dan/pen/Ypxwwo?editors=1000#0
+  <p><a href='http://codepen.io/team/Dan/pen/Ypxwwo?editors=1000#0' target="_blank">Codepen SVG Elements</a></p>
+  <aside class="notes">
+  g stands for group elements, and it allows you to operate on multiple child elements at once.
+    (popup):No x or y coordinates are available for g elements, you have to set them on the children. 
+    Note that the styles set on the g element are inherited by its children.
+    (Swap in transform to demonstrate transforming many elements at a time)
   </aside>
 </section>
 			<section>
@@ -61,13 +69,12 @@
   <rect x="0" y="0" width="100" height="100" fill="#FFF000"/>
   <circle cx="50" cy="50" r="30"  fill="#FFFF00"/>
           </textarea>
-        <aside class="notes">Note that we position the rectangle and circle elements using x and y coordinates relative to their parent container, whether it's a &lt;g&gt; element or an &lt;svg&gt; element. <br /> Also note that svg elements, legitimate HTML elements, can be positioned using traditional CSS relative, absolute positioning.</aside>
-      </section>
-      <section>
-	        difference/overlap of properties vs CSS
+        <aside class="notes">Note that we position the rectangle and circle elements using x and y coordinates relative to their parent container, whether it's a &lt;g&gt; element or an &lt;svg&gt; element. <br /> But remember that svg elements, legitimate HTML elements, can be positioned using traditional CSS relative, absolute positioning. Some browsers may even allow you to position SVG child objects with traditional CSS, but I wouldn't recommend it.</aside>
       </section>
 		<section>
 			<p>SVG Aspect Ratio example</p>
+      <p>see http://tutorials.jenkov.com/svg/svg-viewport-view-box.html</p>
+      <p>Default aspect size: 300x150 - 2:1 ratio</p>
 			<a href="http://codepen.io/team/Dan/pen/xRqbZb" target="_blank">SVG Codepen
             </a><br />
       <a href="https://svg-edit.github.io/svgedit/releases/svg-edit-2.8.1/svg-editor.html#move_back">SVG Edit</a>
