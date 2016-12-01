@@ -12,7 +12,7 @@
   <p>&lt;text&gt;<svg height="40" width="80"> <text x="30" y="30" fill="yellow" stroke="red" stroke-width="1">xyz</text></svg></p>
   <p><a href='http://codepen.io/team/Dan/pen/zoEPqr?editors=1000#' target='_blank'>Codepen SVG Elements</a></p>
   <aside class="notes">
-  Three of the main svg elements you'll deal with when working with d3 are the circle, rect, path and text elements. So like, if you create a d3 bubble chart, under the covers, the bubbles will be SVG circles. Same with a bar chart... the bars themselves are svg rect elements.
+  Four of the main svg elements you'll deal with when working with d3 are the circle, rect, path and text elements. So like, if you create a d3 bubble chart, under the covers, the bubbles will be SVG circles. Same with a bar chart... the bars themselves are svg rect elements.
   (popup):
     Note: without specifying a size, the default height and width for SVGs is 300 x150 (2:1 ratio)
     Mention/show cx cy r, fill stroke for circle<br />
@@ -29,10 +29,11 @@
     (popup):No x or y coordinates are available for g elements, you have to set them on the children. 
     Note that the styles set on the g element are inherited by its children.
     (Swap in transform to demonstrate transforming many elements at a time)
+    (Rotate, Skew, Translate, Scale)
   </aside>
 </section>
 			<section>
-        <h3>SVG vs HTML vs Canvas
+        <h3>SVG vs HTML vs Canvas (need visuals)</h3>
           <aside class="notes">
         <ul>
           <li>SVG is probably better for applications and apps with few items (less than 1000? Depends really)</li>
@@ -49,9 +50,10 @@
        <path class="ohio" .../>
    </svg>
           </textarea>
+        <aside class="notes">Note that we can style SVG elements using classes, just like traditional HTML elements...</aside>
       </section>
               <section>
-	        Many differences in properties: fill vs background-color, stroke vs border:<br />
+	        A few properties are different:<br />
         <textarea rows="9" cols="50" style="font-size:18px;">
             .ohio {
               fill: #94d31b; 
@@ -62,6 +64,7 @@
               fill: #ace63c; 
             }
           </textarea>
+        <aside class="notes">Note that colors, borders of SVG elements are styled differently than HTML elements, Like we set a fill attribute as opposed to setting background-color, and we set a stroke attribute rather than setting borders and colors.</aside>
       </section>
 	    <section>
 	        Position SVG elements via x, y coordinates<br />
@@ -73,14 +76,17 @@
       </section>
 		<section>
 			<p>SVG Aspect Ratio example</p>
-      <p>see http://tutorials.jenkov.com/svg/svg-viewport-view-box.html</p>
-      <p>Default aspect size: 300x150 - 2:1 ratio</p>
-			<a href="http://codepen.io/team/Dan/pen/xRqbZb" target="_blank">SVG Codepen
+			<a href="http://codepen.io/team/Dan/pen/vyWKLZ" target="_blank">SVG Codepen
             </a><br />
+			<a href="http://codepen.io/team/Dan/pen/xRqbZbZ" target="_blank">SVG Meteorite Codepen
+            </a><br />      
       <a href="https://svg-edit.github.io/svgedit/releases/svg-edit-2.8.1/svg-editor.html#move_back">SVG Edit</a>
       <aside class="notes">
-        <p>Note: SVG Viewbox h & w preserves aspect ratio stopping at first dimension to be reduced(? verify?)</p>
-				<p>Viewbox is an attribute commonly used when creating SVG shapes. If you think of the document as a canvas, the view box is part of the canvas you want the viewer to see. Even though the page may cover the entire computer screen, the figure may only exist in a third of the whole.</p><p>Viewbox allows you to tell the parser to zoom in on that third. This eliminates the extra white space. Think of view box as a virtual approach to crop an image. Without it, your graphic will appear a third of its actual size.</p><h3>Viewbox Values</h3><p>To crop an image, you must create points on the picture to make the cuts. The same is true when using the viewbox attribute. The value settings for viewbox include:</p><ul><li><code>minx</code>—the beginning x coordinate</li><li><code>miny</code>—the beginning y coordinate</li><li><code>width</code>—width of the view box</li><li><code>height</code>—height of the view box</li></ul><p>The syntax for viewbox values is:</p><p>viewBox&#61;&#34;0 0 200 150&#34;</p><p>Do not confuse the width and height of the view box with the width and height you set for the SVG document.</p>
-
+      <p>1 Note: Default aspect size: 300x150 - 2:1 ratio. Rectangle size is exactly 50x20 (yellow background set to indicate the h & w of the SVG element). </p>
+      <p>2 Note: Setting h & w of svg element does not change h & w of rect object.</p>
+      <p>3 Note: changing to viewbox from static h & w expands svg area to full width of window, increasing child object h & w relative to the window size. If you've worked at all with responsive design, I think you can see where we're going with this. </p>
+      <p>4 Note: changing the viewbox h & w to the size of the child object stretches the child rectangle object to the full width of the SVG parent object.  ...So when you only use viewbox to set the dimensions, the height and width of the child objects are RELATIVE to the SVG Viewbox</p>
+        <p>Now let's look at our Meteorite SVG image & viewBox settings...</p>
+        <p> </p>
       </aside>
 		</section>
