@@ -1,13 +1,35 @@
       <section>
-        <H1>Data Science</H1>
-        <H3>Visualization Charts</H3>
+        <H1>Data Visualization</H1>
+        <H3>Choosing a chart</H3>
+        <aside class="notes">One of the things we'll want to think about before we jump in and start creating bar charts and pie charts, is really what it is we're trying to visualize about our data. </aside>
       </section>
-      <section><img src="images/ChartSuggestions.png"/></section>
-      <section><img src="images/Relationship.png"/>
-        <p> <a href="https://bl.ocks.org/cmgiven/abca90f6ba5f0a14c54d1eb952f8949c" target="_blank">Scatterplot ex</a></p><a href="http://www.verisi.com/resources/d3-tutorial-basic-charts.htm#s3" target="_blank">Bubble ex?  </a>
-        <aside class="notes">Presenter Notes</aside>
+      <section><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/ChartSuggestions.png"/>
+        <aside class="notes">Here's a good diagram of a lot of the common charts, and kind of many pathways to deciding on the best chart to use - let's zoom in on the center area:(click next)</aside>
+			</section>
+      <section><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/ChartSuggestionsZoom.png"/>
+        <aside class="notes">The first thing you want to think about is what it is you are doing with your data. Are you showing a Relationship between aspects of your data? Are you Comparing different aspects of your data? Are you showing how your data changes over time? or are you wanting to visually depict the Composition of your data?</aside>
+			</section>
+      <section><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/Relationship.png"/>
+        <aside class="notes">Relationship charts show the relationship between different variables. So when you're looking to show the relationship between two things, a Scatterplot chart works great, and they're easily created using d3.
+        <p>(popup1) Here we can see a simple scatterplot that compares Obesity rate - y-axis to yearly income - x-axis by state. (use brush to select a few extreme examples)</p>
+          If you need to compare more than two variables, that's where a bubble chart comes in handy
+        <p>(popup2) Here's a bubblechart that that compares average lifespan - y-axis to average yearly income - x-axis by country. A third variable - country population is conveyed by the size of the bubble. There's even a fourth variable of geographic area conveyed by the color of the bubbles (use cursor hover show a few examples... mention the slowness of svg hovers.)</p>
+        </aside>
+        <p> <a href="https://bl.ocks.org/cmgiven/abca90f6ba5f0a14c54d1eb952f8949c" target="_blank">Scatterplot ex</a></p><a href="https://bost.ocks.org/mike/nations/" target="_blank">Bubble ex  </a>
       </section>
-      <section><img src="images/ComparisonOverTime.png"/></section>
-      <section><img src="images/Distribution.png"/></section>
-      <section><img src="images/CompositionStatic.png"/></section>
+      <section>
+        <aside class="notes">Comparison charts compare multiple variables, usually along an x-axis. For only a few variables, say you want to show number of website hits over time - email vs google search - a comparison chart with 3 bars per/month would be a good simple visualization. (Get a screen shot of the old SA linecharts) But say you wanted to show all sources of website traffic - it could be a jumbled mess with 10-15 bars per month... a line chart would probably be easier to read.</aside>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/ComparisonOverTime.png"/>
+</section>
+      <section>
+        <aside class="notes">A distribution chart shows amounts over an x axis - frequently time (popup): here we can see is a simple bar chart showing the distribution of users' time spent on a website you can see that with 10-15 ranges being charted, that a bar chart is informative, but should you want to chart more points than that, or just show a general trend, a line chart may be a better choice... maybe with hoverable points along the line, and even tooltips to display more detailed data. </aside>        
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/Distribution.png"/>
+<p> <a href="http://bl.ocks.org/mbostock/3048166" target="_blank">Distribution chart ex</a></p></section>
+      <section>
+        <aside class="notes">The most common form of Composition chart is the ubiquitous pie chart... I don't want to go into, like, the whole debate over use and misuse of pie charts, but it's really useful in showing simple proportions between maybe, 2-3 elements at a glance. But a pie chart with more than 3 or so slices can be really hard to read (popup), especially when you end up with really skinny slices that need callout lines - really ugly and kills the visualization. Here's an example of a really unreadable piechart of the top 100 tweeters - but I bet you could find worse than this (popup) here's a stacked bar chart that's really good at showing population distribution over 50 states, it's better than 50 pie 7-wedge pie charts. Anyway, next, Doug's gonna show how to use Map Reduce in order to get our data into a shape where we can apply our chosen charting.</aside>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/CompositionStatic.png"/><br />
+        <a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-478/badPie.png" target="_blank">Bad Pie ex</a><br />
+<a href="http://bl.ocks.org/mbostock/3886208" target="_blank">Stack bar ex</a>
+        
+</section>
     </section>
