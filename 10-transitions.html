@@ -12,25 +12,12 @@
     d3.selectAll(".orange").transition(t)
         .style("fill", "orange");
     </pre>
-    <aside class="notes">This is a basic transition</aside>
+    <aside class="notes">This is a basic transition - it lasts 750 milliseconds, and eases out linearly. The easings are a way to distort the speed of the motion in animation. Like, easing in or easing out slowly - which is more realistic, like motion is in real life.  There's tons of different easing methods available, and I'll have them listed in the exercises to experiment with. Actually the next slide shows some of them</aside>
 </section>
+
 <section>
-    <p>Go through Easings</p>
-
-    See https://github.com/d3/d3-ease ...use above code and swap in different easings
-
-    <aside class="notes">Easing is a method of distorting time to control apparent motion in animation. 
-    It is most commonly used for slow-in, slow-out. By easing time, animated transitions are smoother and exhibit more plausible motion.
-
-    The easing types in this module implement the ease method, which takes a normalized time t and returns the corresponding “eased” time tʹ. 
-    Both the normalized time and the eased time are typically in the range [0,1], where 0 represents the start of the animation and 1 represents the end; 
-    some easing types, such as elastic, may return eased times slightly outside this range. 
-    
-    A good easing type should return 0 if t = 0 and 1 if t = 1. See the easing explorer for a visual demonstration. 
-
-These easing types are largely based on work by Robert Penner.</aside>
-</section>
-<section>
+  
+  <div style="height:500px;overflow:scroll;">
     <ul>
         <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#_ease"><em>ease</em></a> - ease the given normalized time.</li>
         <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeLinear">d3.easeLinear</a> - linear easing; the identity function.</li>
@@ -74,4 +61,15 @@ These easing types are largely based on work by Robert Penner.</aside>
         <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeBounceOut">d3.easeBounceOut</a> - reverse bounce easing.</li>
         <li><a href="https://github.com/d3/d3-ease/blob/master/README.md#easeBounceInOut">d3.easeBounceInOut</a> - symmetric bounce easing.</li>
     </ul>
+  </div>
+  <a href="http://codepen.io/team/Dan/pen/yVxWyq?editors=1010" target="_blank">Transition demo</a><br />
+  <a href="http://codepen.io/team/Dan/pen/jVvRdY" target="_blank">Exercise</a><br />
+  
 </section>
+<section>
+    <aside class="notes">Zoomable demo (Popup): Note1: show animation, walk throught queue, HTML section. Note2:Show animation, then comment out projection.fitExtent to show what is happening aside from zoom.</aside>
+  <a href="http://codepen.io/team/Dan/pen/zoyQRJ" target="_blank">Zoomable demo</a><br />
+  <a href="http://codepen.io/team/Dan/pen/GNwrPX" target="_blank">Zoomable Exercise</a><br />
+</section>
+  
+  

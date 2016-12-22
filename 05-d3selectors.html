@@ -1,3 +1,122 @@
     <section>
       <H1>D3 Selectors</H1>
+      <aside class="notes">Let's take a look at some of d3's common selectors - and focus on the data-binding capabilities, as well as the enter-update-exit pattern for cases where we're constantly re-applying data... </aside>
     </section>
+    <section>
+      <h3>Basic selection</h3>
+      <aside class="notes">Here's your basic d3 selector... It should feel very familiar if you've ever used jQuery: You could swap in any class with a . or id using a # sign. Here we're setting the text color and class attribute of all p tags.</aside>
+      <pre><code data-trim="data-trim" class="hljs">d3.selectAll("p")
+    .attr("class", "errorText")
+    .style("color", "red");</code></pre>
+    </section>
+
+    <section>
+      <h3>Select/ Select All</h3>
+      <aside class="notes">Of course, along with selectAll() you can just use select(), which returns the first element. In the two following examples, the first one selects all the bold elements in the first p tag, the second one selects all bold elements contained within all p tags. </aside>
+      <pre><code data-trim="data-trim" class="hljs">
+        var firstParaBolds = d3.select("p").selectAll("strong");
+        var allBolds = d3.selectAll("p").selectAll("strong");</textarea>
+    </code></pre>
+</section>
+
+   
+    <section>
+      <h3>Enter-update-exit: Enter</h3>
+      <aside class="notes"> .enter() returns the enter selection - placeholder nodes for each data point that had no corresponding DOM element in the selection. The enter selection is determined by selection.data.
+        
+        The enter selection is typically used to create “missing” elements corresponding to new data. For example, to create DIV elements from an array of numbers:
+If we start with an empty body, the above code will create six new DIV elements, append them to the body in-order, and assign their text content as the associated number:</aside>
+      <pre><code data-trim="data-trim" class="hljs">
+
+var div = d3.select("body")
+  .selectAll("div")
+  .data([4, 8, 15, 16, 23, 42])
+  .enter().append("div")
+    .text(function(d) { return d; });
+
+<div>4</div>
+<div>8</div>
+<div>15</div>
+<div>16</div>
+<div>23</div>
+<div>42</div></code></pre>
+      
+      <a href="http://codepen.io/team/Dan/pen/jVJzvx" target="_blank">Enter Demo</a>
+    </section>
+
+    <section>
+      <h3>Enter - Update - Exit</h3>
+      <aside class="notes">The exit selection is mainly used to remove “superfluous” elements corresponding to old data. 
+        
+        It returns the exit selection which are the existing DOM elements in the selection that don't exist in the new dataset. The exit selection is determined by the previous selection.data
+        
+But to really see it in action, we need to see it in the context of updating the data behind a group of elements multiple times: (Explain 3 elements in this code, then)
+        (Popup): Explain code, then uncomment setTimeout code that updates/exits... Then make MORE data in second [array] to show both colors in table. Then preview COMPLETE exercise and then START
+        
+      </aside>
+      <pre><code data-trim="data-trim" class="hljs">
+      //"UPDATE" elements - elements that already existed before the update
+  var textElements = svg.selectAll("text")
+    .data(data)
+    .attr("fill","#FF0000")
+    .attr("x", 40)
+    .attr("y", function(d, i){ return (i+1)*20;})
+    .text(function(d) { return d; });
+   
+   //"ENTER" elements - new elements introduced in the data
+  textElements.enter().append("text")
+     .attr("fill","#00FF00")
+    .attr("x", 40)
+    .attr("y", function(d, i){ return (i+1)*20;})
+     .text(function(d) { return d; });
+  
+  //"EXIT" Elements - elements in existing data, not contained in new data.
+  textElements.exit().remove();
+</code></pre>
+      <a href="http://codepen.io/team/Dan/pen/dOrmgG" target="_blank">General Update pattern</a><br />
+      <a href="http://codepen.io/team/Dan/pen/WoWQzZ" target="_blank">E-U-E Complete preview</a><br />
+      <a href="http://codepen.io/team/Dan/pen/jVRrbm?editors=0010#0" target="_blank">E-U-E Exercise</a>
+    </section>
+
+ <section>
+      <h3>Joining / cascading data</h3>
+      <aside class="notes">So here we have some data - an array of 3 arrays of integers. This might actually be easier to look at in CodePen
+      (popup): You can see in our first selector, we're creating an HTML table element and creating table rows for the (3) arrays in our data array.
+      
+      After that, we create our table cells for each row by using our tr selector and referencing its data, then appending each cell, setting the cells' text to the numeric values.</aside>
+      <pre><code data-trim="data-trim" class="hljs">var matrix = [
+  [ 1979,  1981, 1982, 1983],
+  [ 1984, 1985, 1986, 1987],
+  [ 1989, 1990, 1991, 1992]
+];
+
+var tr = d3.select("body")
+  .append("table")
+  .selectAll("tr")
+  .data(matrix)
+  .enter().append("tr");
+
+var td = tr.selectAll("td")
+  .data(function(d) { return d; })
+  .enter().append("td")
+    .text(function(d) { return d; })</code></pre>
+      <a href="http://codepen.io/team/Dan/pen/QGYGdG" target="_blank">Joining Demo</a>
+    </section>
+
+    <section>
+      <h3>Filtering</h3>
+      <aside class="notes">Of course, along with selectAll() you can just use select(), which returns the first element. In the two following examples, the first one selects all the bold elements in the first p tag, the second one selects all bold elements contained within all p tags. </aside>
+      <textarea>
+        </textarea>
+    </section>
+    <section>
+      <h3>Final Exercise</h3>
+      <aside class="notes">So here's a final exercise - it's similar to the previous Enter-Update-Exit exercise, except for the fact that it's geared more toward a constantly updating data source - we'll use a for loop to constantly update our visualization. There's no right answer to the exercise.... </aside>
+      
+      <a href="http://codepen.io/team/Dan/pen/ENMQMR" target="_blank">E-U-E Complete preview</a><br />
+      <a href="http://codepen.io/team/Dan/pen/oYVEQJ" target="_blank">E-U-E Exercise</a>
+    </section>
+
+
+
+
