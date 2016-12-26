@@ -5,25 +5,58 @@
           When you work with the D3 javascript charting framework, one of the unique aspects of it that may be unfamiliar to you as a web developer is the fact that you will be dealing with the SVG element and SVG objects as opposed to the usual HTML elements you're familiar with.   If you're not familiar with it, SVG stands for Scalable Vector Graphics - SVGs are scalable to the size of the viewing window and will adjust in size and resolution according to the window in which it is displayed.  So like, for devices with retina displays, they look great, and you don't need a hi-res and low-res version of your graphics.
         </aside>
       </section>
+     <section>
+	        Can apply styles/classes like html elements:<br />
+        <textarea style="background-color:black;color:white;font-size:24px;" rows="4" cols="50">
+   <svg ...>
+       <ellipse class="ground" .../>
+       <path class="ohio" .../>
+   </svg>
+          </textarea>
+        <aside class="notes">Note that we can style SVG elements using classes, just like traditional HTML elements...</aside>
+      </section>
+      <section>
+	        A few properties are different:<br />        
+        <textarea style="background-color:black;color:white;font-size:24px;" rows="8" cols="50">
+            .ohio {
+              fill: #94d31b; 
+              stroke="green" 
+              stroke-width="4"
+            }
+            .ohio:hover {
+              fill: #ace63c; 
+            }
+          </textarea>
+        <aside class="notes">Note that colors, borders of SVG elements are styled differently than HTML elements, Like we set a fill attribute as opposed to setting background-color, and we set a stroke attribute rather than setting borders and colors.</aside>
+      </section>
+	    <section>
+	        Position SVG elements via x, y coordinates<br />
+                
+        <textarea style="background-color:black;color:white;font-size:24px;" rows="4" cols="90">
+  <rect x="0" y="0" width="100" height="100" fill="#FFF000"/>
+  <circle cx="50" cy="50" r="30"  fill="#FFFF00"/>
+          </textarea>
+        <aside class="notes">Note that we position the rectangle and circle elements using x and y coordinates relative to their parent container, whether it's a &lt;g&gt; element or an &lt;svg&gt; element. <br /> But remember that svg elements, legitimate HTML elements, can be positioned using traditional CSS relative, absolute positioning. Some browsers may even allow you to position SVG child objects with traditional CSS, but I wouldn't recommend it.</aside>
+      </section>
 <section style="background-color:#030103;color:#FFFBEC">Common Elements 
   <p>&lt;circle&gt;<svg height="119" width="84"><circle cx="34" cy="95" r="20" fill="#55dd55" stroke="#ffff00" stroke-width="2"></circle></svg></p>
   <p>&lt;rect&gt;<svg height="40" width="60"><rect x="20" y="0" height="40" width="40" fill="#5555dd" stroke="#ff00ff" stroke-width="2"></rect></svg></p>
   <p>&lt;path&gt; <svg height="40" width="60"> <path d="M 10 30 L 60 20 L 5 40 z" fill="orange" stroke="black" stroke-width="1"></path></svg></p>
   <p>&lt;text&gt;<svg height="40" width="80"> <text x="30" y="30" fill="yellow" stroke="red" stroke-width="1">xyz</text></svg></p>
-  <p><a href='http://codepen.io/team/Dan/pen/zoEPqr?editors=1000#' target='_blank'>Codepen SVG Elements</a></p>
+  <p><a href='http://codepen.io/team/Dan/pen/zoEPqr?editors=1000#' target='_blank'>Codepen 4 Main SVG Elements</a></p>
   <aside class="notes">
   Four of the main svg elements you'll deal with when working with d3 are the circle, rect, path and text elements. So like, if you create a d3 bubble chart, under the covers, the bubbles will be SVG circles. Same with a bar chart... the bars themselves are svg rect elements.
   (popup):
     Note: without specifying a size, the default height and width for SVGs is 300 x150 (2:1 ratio)
     Mention/show cx cy r, fill stroke for circle<br />
     x,y fill stroke for rect<br />
-    path coordinates for path <br />
+    path coordinates for path - simplest possible path is a triangle.<br />
     text fill stroke    
   </aside>
 </section>
 <section>The &lt;g&gt; Element 
   <p>&lt;g&gt;</p>
-  <p><a href='http://codepen.io/team/Dan/pen/Ypxwwo?editors=1000#0' target="_blank">Codepen SVG Elements</a></p>
+  <p><a href='http://codepen.io/team/Dan/pen/Ypxwwo?editors=1000#0' target="_blank">Codepen SVG g element</a></p>
   <aside class="notes">
   g stands for group elements, and it allows you to operate on multiple child elements at once.
     (popup):No x or y coordinates are available for g elements, you have to set them on the children. 
@@ -39,54 +72,36 @@
           <li>SVG is probably better for applications and apps with few items (less than 1000? Depends really)</li>
           <li>Canvas is better for thousands of objects and careful manipulation, but a lot more code (or a library) is needed to get it off the ground.  If you've heard of the P5 javascript library, it's a really simplified wrapper for coding for the canvas. </li>
           <li>HTML Divs are clunky and do not scale, making a circle is only possible with rounded corners, making complex shapes is possible but involves hundreds of tiny tiny pixel-wide divs. Madness ensues.</li>
+          
+        <p>Now let's look at our Meteorite SVG image & viewBox settings...</p>
           </ul>
           </aside>
 </section>
-      <section>
-	        Can apply styles/classes like html elements:<br />
-        <textarea rows="5" cols="50" style="font-size:18px;">
-   <svg ...>
-       <ellipse class="ground" .../>
-       <path class="ohio" .../>
-   </svg>
-          </textarea>
-        <aside class="notes">Note that we can style SVG elements using classes, just like traditional HTML elements...</aside>
-      </section>
-              <section>
-	        A few properties are different:<br />
-        <textarea rows="9" cols="50" style="font-size:18px;">
-            .ohio {
-              fill: #94d31b; 
-              stroke="green" 
-              stroke-width="4"
-            }
-            .ohio:hover {
-              fill: #ace63c; 
-            }
-          </textarea>
-        <aside class="notes">Note that colors, borders of SVG elements are styled differently than HTML elements, Like we set a fill attribute as opposed to setting background-color, and we set a stroke attribute rather than setting borders and colors.</aside>
-      </section>
-	    <section>
-	        Position SVG elements via x, y coordinates<br />
-                <textarea rows="4" cols="90" style="font-size:18px;">
-  <rect x="0" y="0" width="100" height="100" fill="#FFF000"/>
-  <circle cx="50" cy="50" r="30"  fill="#FFFF00"/>
-          </textarea>
-        <aside class="notes">Note that we position the rectangle and circle elements using x and y coordinates relative to their parent container, whether it's a &lt;g&gt; element or an &lt;svg&gt; element. <br /> But remember that svg elements, legitimate HTML elements, can be positioned using traditional CSS relative, absolute positioning. Some browsers may even allow you to position SVG child objects with traditional CSS, but I wouldn't recommend it.</aside>
-      </section>
-		<section>
-			<p>SVG Aspect Ratio example</p>
-			<a href="http://codepen.io/team/Dan/pen/vyWKLZ" target="_blank">SVG Codepen
-            </a><br />
-			<a href="http://codepen.io/team/Dan/pen/xRqbZb" target="_blank">SVG Meteorite Codepen
-            </a><br />      
+ 		<section>
+			<p>SVG & Aspect Ratio</p>
+      
       <a href="https://svg-edit.github.io/svgedit/releases/svg-edit-2.8.1/svg-editor.html#move_back"  target="_blank">SVG Edit</a>
+			<a href="http://codepen.io/team/Dan/pen/xRqbZb" target="_blank">SVG scaling meteorite Codepen
+            </a><br />      
+			<a href="http://codepen.io/team/Dan/pen/vyWKLZ" target="_blank">SVG Scaling simple demo
+            </a><br />
       <aside class="notes">
+        <p>(Meteorite 1) Here we have an svg element with child shapes that are roughly 250x180.  We've started with setting the svg element itself with the height and width set to the same size.</p>        
+        <p>2 Note: Now let's add a viewbox attribute, with the same dimensions - (no difference)</p>
+        <p>3 Note: Now let's increase the height and width settings of the viewbox attributes and notice that the elements shrink in size RELATIVE to the VIEWBOX WIDTH.</p>
+        <p>4 Note: Now let's GET RID of the height and width attributes of the svg element - we're now letting the viewbox attributes determine how to display the shapes. Notice how just using the viewbox automatically scales the image up to the width of the window.</p>        
+        <p>Anyway, let's look at a simpler example...</p>
+        
       <p>1 Note: Default aspect size: 300x150 - 2:1 ratio. Rectangle size is exactly 50x20 (yellow background set to indicate the h & w of the SVG element). </p>
       <p>2 Note: Setting h & w of svg element does not change h & w of rect object.</p>
       <p>3 Note: changing to viewbox from static h & w expands svg area to full width of window, increasing child object h & w relative to the window size. If you've worked at all with responsive design, I think you can see where we're going with this. </p>
       <p>4 Note: changing the viewbox h & w to the size of the child object stretches the child rectangle object to the full width of the SVG parent object.  ...So when you only use viewbox to set the dimensions, the height and width of the child objects are RELATIVE to the SVG Viewbox</p>
-        <p>Now let's look at our Meteorite SVG image & viewBox settings...</p>
-        <p> </p>
+        <p>Next... exercise</p>
       </aside>
 		</section>
+<section>
+  <aside class="notes">Here's a Codepen for you to use to create a circle and rectangle. I've set the background color of the svg to Yellow so you can kind of see the true dimensions of the svg object itself.  Play around with the svg's height and width as well as the viewbox attribute. See if you can get the shapes to expand to the full width of the window.</aside>
+  <a href="http://codepen.io/team/Dan/pen/LbJGKV">SVG Aspect Ratio Exercise<br />
+    ( http://codepen.io/team/Dan/pens/public/?grid_type=list <br />
+    05-htmlsvg-exercise01-viewbox-start )</a>
+</section>
